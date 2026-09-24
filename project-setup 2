@@ -1,0 +1,364 @@
+BlockchainIndustrialPlatform/
+│
+├── api/
+│   └── process-transaction.ts
+│
+├── build/
+│   └── contracts/                    (compiled ABI/bytecode artifacts, .json per contract)
+│       ├── AccessControl.json, AggregatorV3Interface.json, AssetTransferProcessor.json,
+│       │   BeeRoutingAlgorithm.json, BlockchainMonitor.json, BlockchainRegistry.json,
+│       │   BlockchainRegistryBase.json, BCADN.json, CarbonCreditMarket.json,
+│       │   ChaCha20Poly1305.json, CityEmissionsContract.json, CityHealthCalculator.json,
+│       │   CityRegister.json, ClimateReductionContract.json, ClusterCommunication.json,
+│       │   ClusterManager.json, CompanyRegister.json, ConfidenceScoreCalculator.json,
+│       │   Context.json, Counters.json, ERC165.json, ERC20.json, FixedPointMath.json,
+│       │   IAccessControl.json, ICreditMarketContract.json, IERC165.json, IERC20.json,
+│       │   IERC20Metadata.json, IRewardCalculator.json, IUncertaintyAnalytics.json,
+│       │   IUniswapV2Router01.json, IUniswapV2Router02.json, IZKPVerifier.json,
+│       │   Math.json, MerkleTreeLib.json, MetadataParser.json, MitigationContract.json,
+│       │   NodeTypes.json, Ownable.json, PacechainChannel.json, PasschainValidator.json,
+│       │   Pausable.json, ProofGenerator.json, ProofOfStakeValidator.json,
+│       │   ReceivingBlockchainInterface.json, ReentrancyGuard.json, RelayTypes.json,
+│       │   RenewalTheoryContract.json, RequestManager.json, ResponseManager.json,
+│       │   RewardBase.json, RewardCalculator.json, RewardDistributor.json,
+│       │   RewardToken.json, SafeMath.json, SignedMath.json,
+│       │   SpeculativeTransactionHandler.json, StateManager.json, Strings.json,
+│       │   TemperatureRenewalContract.json, TransactionRelay.json,
+│       │   TransactionTypes.json, TransactionValidator.json, UncertaintyAnalytics.json,
+│       │   ZKPVerifierBase.json
+│       └── (NOTE: no GridStabilityOracle/GridResponsiveAMM/TimeWeightedAMM/
+│            EnergyTokenVault artifacts listed here yet — build/ output for the
+│            energygrid contracts likely needs a fresh compile+artifact export)
+│
+├── components/
+│   ├── BlockchainContext.tsx
+│   ├── ClientInit.tsx
+│   ├── GlobalErrorHandler.tsx
+│   ├── PerformanceMetrics.tsx
+│   └── TransactionForm.tsx
+│
+├── config/
+│   ├── contract_addresses.json        ← likely where CONTRACT_ADDRESSES belongs
+│   ├── network_config.d.ts
+│   ├── network_config.js
+│   └── tatum-config.ts
+│
+├── constants/
+│   └── constants.js
+│
+├── contracts/
+│   ├── BCADN/
+│   │   ├── BCADN.sol
+│   │   ├── ProactiveDefenseMechanism.sol
+│   │   └── BCADNConnector.sol
+│   ├── N2N/
+│   │   ├── ABATLTranslation.sol
+│   │   ├── ClusteringContract.sol
+│   │   ├── NIASRegistry.sol
+│   │   ├── NIDRegistry.sol
+│   │   └── SequencePathRouter.sol
+│   ├── blockchain/
+│   │   ├── BlockchainRegistryBase.sol
+│   │   └── ChaCha20Poly1305.sol
+│   ├── climate/
+│   │   ├── CityEmissionsContract.sol
+│   │   ├── CityHealthCalculator.sol
+│   │   ├── CityRegister.sol
+│   │   ├── CompanyRegister.sol
+│   │   ├── MitigationContract.sol
+│   │   ├── RenewalTheoryContract.sol
+│   │   └── TemperatureRenewalContract.sol
+│   │
+│   ├── energygrid/                    ← OLDER copy (from terminal capture; not
+│   │   │                                 yet in the maintained reference doc)
+│   │   ├── EnergyMath.sol
+│   │   ├── EnergyMathTW.sol
+│   │   ├── EnergyToken.sol
+│   │   ├── EnergyTokenVault.sol
+│   │   ├── GridResponsiveAMM.sol
+│   │   ├── GridStabilityOracle.sol
+│   │   ├── IEnergyToken.sol
+│   │   ├── IEnergyVault.sol
+│   │   ├── IGridOracle.sol
+│   │   └── TimeWeightedAMM.sol
+│   │
+│   ├── energygridcontract2/           ← ACTIVE copy, fixed files go here
+│   │   ├── DEPLOYMENT_GUIDE.md
+│   │   ├── EnergyMath.sol
+│   │   ├── EnergyMathTW.sol
+│   │   ├── EnergyToken.sol             (stray duplicate — not a real token, ignore)
+│   │   ├── EnergyTokenVault.sol
+│   │   ├── energytokenvaultaddress.txt ← likely holds the new deployed Vault address
+│   │   ├── GridResponsiveAMM.sol
+│   │   ├── GridStabilityOracle.sol
+│   │   ├── IEnergyToken.sol
+│   │   ├── IEnergyVault.sol
+│   │   ├── IGridOracle.sol
+│   │   └── TimeWeightedAMM.sol
+│   │
+│   ├── passchain/
+│   │   ├── ClusterManager.sol
+│   │   ├── MetadataParser.sol
+│   │   ├── PacechainChannel.sol
+│   │   ├── RewardCalculator.sol
+│   │   ├── RewardToken.sol
+│   │   └── ZKPVerifierBase.sol
+│   ├── passchain 2/                   (from terminal capture)
+│   │   ├── ClusterManager2.sol
+│   │   ├── MetadataParser2.sol
+│   │   ├── PacechainChannel2.sol
+│   │   ├── RewardCalculator2.sol
+│   │   ├── RewardToken2.sol
+│   │   └── ZKPVerifierBase2.sol
+│   ├── SecondN2NContracts/             (from terminal capture)
+│   │   ├── ABATLTranslation.sol
+│   │   ├── ClusteringContract.sol
+│   │   ├── NIASRegistry.sol
+│   │   ├── NIDRegistry.sol
+│   │   └── SequencePathRouter.sol
+│   ├── relay/
+│   │   └── RelayChain.sol
+│   ├── stream/                        (from terminal capture)
+│   │   ├── StreamCore.sol
+│   │   └── StreamTransactionManager.sol
+│   ├── transaction/                    (from terminal capture)
+│   │   └── congestion.sol
+│   ├── Uncertainty Smart Contracts/    (from terminal capture)
+│   │   ├── IUncertaintyAnalytics.sol
+│   │   ├── RequestManager.sol
+│   │   ├── ResponseManager.sol
+│   │   ├── UncertaintyAnalytics.sol
+│   │   └── UncertaintyAnalyticsHere.sol
+│   ├── vehicle/                        (from terminal capture)
+│   │   ├── IVehicleRegistry.sol
+│   │   ├── RevocationManager.sol
+│   │   └── VehicleRegistry.sol
+│   ├── virtualchain/                   (from terminal capture)
+│   │   └── SimpleServiceNodeManager.sol
+│   ├── modelcontext/                   (from terminal capture)
+│   │   └── UISContracts.sol
+│   ├── ClimateRegulationContract.sol
+│   ├── RequestManager.sol
+│   ├── ResponseManager.sol
+│   └── UncertaintyAnalytics.sol
+│
+├── contexts/
+│   └── TransactionContext.tsx
+│
+├── data/
+│   └── carbonmonitor-cities_datas_2025-01-13.csv
+│
+├── interfaces/
+│   └── IUncertaintyAnalytics.sol
+│
+├── library/
+│   ├── FixedPointMath.sol
+│   └── TransactionTypes.sol
+│
+├── migrations/
+│   ├── 1_initial_migration.js
+│   ├── 2_deploy_contracts.js
+│   └── (additional migration files)
+│
+├── pages/
+│   ├── app.tsx
+│   └── api/
+│
+├── passchain/
+│   └── LICENSE
+│
+├── passchain_cloud/
+│   ├── .dockerignore
+│   ├── .env
+│   ├── cloud_deployment_orchestrator.sh
+│   ├── Dockerfile
+│   ├── local_test.sh
+│   ├── PassChain_Chart_Generation_Guide.md
+│   ├── passchain_chart_generator.js
+│   ├── passchain_cloud_config.js
+│   ├── Passchain_Cloud_Deployment_Guide.md
+│   ├── passchain_cloud_service.js
+│   ├── passchain_cloud_validator.js
+│   ├── Passchain_New_Project_Setup.md
+│   └── README.md
+│
+├── path/to/project/logs/
+│   └── blockchain_development.log
+│
+├── pays_analysis_charts/
+│   └── chart_1..chart_10_*.png
+│
+├── pseudoscript/                       (from terminal capture)
+│   └── UISTestscript
+│
+├── python/
+│   ├── BCADN.py, BCADN2.py, benchmarkcompare.py, climatecomparisonvisualization.py,
+│   │   climatevisualization.py, congestion.py, dataengineering.py, generate_figures.py,
+│   │   generate_visualizations.py, hermas.py..hermas5.py, modelcompresults.py,
+│   │   modelcontextcompvisual.py, n2ndeploymentvisuals.py, n2ngraph.txt,
+│   │   n2nvisualization.py, n2nvisualizationagain.py, n2nvisualizationcleaner.py,
+│   │   passchainbiggergraph.py, passchainefficiencychart.py, passchaintransmission.py,
+│   │   passchainvisualchart.py, passvisual.py, putra1.py..putra4.py, rekshare.py,
+│   │   SBCPBenchmark.py, SBCPComp.py, SBCPCompBackup.py, SBCPConsensus.py, SBCPCore.py,
+│   │   SBCPDist.py, SBCPDistBackup.py, SBCPEvaluationEngine.py, SBCPEvaluationEngine2.py,
+│   │   SBCPTest.py, SBCPValid.py, SBCPVisual.py, sbcp_enhanced_experiment.py,
+│   │   sbcp_enhanced_network.py, sequencerouterpath.py, sequencerpath.py.py,
+│   │   test_n2n_routing.py, uncertainty.py, virtualaccross.py,
+│   │   virtualcrossbenchmarking.py, virtualcrosschainvisuals.py
+│   │
+│   │   (also present per terminal capture, not in the reference doc's python/ list:)
+│   ├── Aunet Benchmark Comparison.py, Aunet Validation.py, aunet_validationfirst.py,
+│   │   config.py, data_generators.py, energygrid1.py, energygrid2.py, main_experiment.py,
+│   │   metrics_collector.py, processing_pipeline.py, revchain_plots.py,
+│   │   passchaintestactive.py
+│   │
+│   ├── Aunet Result Figures/
+│   │   └── fig1..fig8_*.pdf/.png
+│   ├── nexOS/
+│   │   ├── blockchain_sim.py, config.py, data_generators.py, main_experiment.py,
+│   │   │   metrics_collector.py, nextosbenchmark.py, processing_pipeline.py
+│   │   └── results/benchmarks/
+│   │       ├── benchmark_results.json, benchmark_table.tex
+│   │       └── figures/ fig1..fig6_*.pdf/.png
+│   └── __pycache__/
+│       ├── blockchainworkflow.cpython-313.pyc, climatemodule.cpython-313.pyc,
+│       │   companymodule.cpython-313.pyc, emmissionsmodule.cpython-313.pyc,
+│       │   healthmodule.cpython-313.pyc, renewalmodule.cpython-313.pyc,
+│       │   SBCPCore.cpython-313.pyc, sbcp_enhanced_network.cpython-313.pyc,
+│       │   __init__.cpython-313.pyc
+│
+├── renewal_vs_bcprp_comparison/
+│   └── a..h_*_comparison.pdf/.png
+│
+├── repository/                         (empty)
+│
+├── results/
+│   ├── revchain_2026-02-11T14-57-04-992Z.json  (+ 3 similar timestamped files, per terminal capture)
+│   ├── bcadn_analysis/
+│   │   ├── network_analysis.json, network_analysis.png, network_metrics.png,
+│   │   │   network_performance.png, network_results.json
+│   ├── benchmarks/                     (per terminal capture)
+│   │   ├── benchmark_results.json, benchmark_table.tex
+│   │   └── figures/ fig1..fig6_*.pdf/.png
+│   ├── data/                           (per terminal capture)
+│   │   ├── unified_data.json
+│   │   └── raw/ org1-4 sample medical/market/sensor/document data
+│   ├── energy_amm_experiments/         (per terminal capture)
+│   │   └── data/ base_amm_results.json, time_weighted_results.json
+│   ├── n2n_bcadn_integration/          (empty)
+│   └── reports/                        (per terminal capture)
+│       ├── NEXOS_EXP_20251202_* metrics/report/results files
+│       └── figures/ fig1..fig8_*.pdf/.png
+│
+├── results_figures/                    (from terminal capture)
+│   └── fig_byzantine_consensus, fig_complexity_comparison, fig_gas_consumption,
+│       fig_reputation_evolution, fig_verification_pipeline (.pdf/.png)
+│
+├── revchain-results/                   (from terminal capture)
+│   ├── latest_session.json
+│   └── session_2026-02-*/ (4 timestamped sessions)
+│       └── blockHeaderValidation.json, complete_results.json, contractState.json,
+│           performanceMetrics.json, registration.json, revocation.json, SUMMARY.txt
+│
+├── sbcp_proof_results/                 (from terminal capture)
+│   └── byzantine_fault_tolerance.png, confidence_evolution.png, throughput_scaling.png
+│
+├── sbcp_validation_results/
+│   └── sbcp_validation_plots.png, sbcp_validation_report.txt, sbcp_validation_results.json
+│
+├── services/
+│   └── tatum-blockchain-service.ts
+│
+├── service_node_results/
+│   ├── data/, figures/, individual_pdf_figures/, latex_tables/, pdf_figures/,
+│   │   processed_data/, tables/
+│
+├── strebacom_benchmark_results/
+│   └── comprehensive_benchmarks.json, latency_measurements.json,
+│       performance_analytics.json, scalability_analysis.json, throughput_benchmarks.json
+│
+├── strebacom_cloud/
+│   ├── cloud_deployment_orchestrator.py, Dockerfile, requirements.txt,
+│   │   strebacom_cloud_config.py, strebacom_cloud_validator.py
+│   │   (terminal capture also shows: .py config, validation report/results, local_validator.py)
+│
+├── strebacom_experiment_results/
+│   └── performance_data.json, strebacom_comprehensive_results.json
+│
+├── test/
+│   ├── BCADN.js
+│   ├── bCADNshort.js
+│   ├── blockstream.js
+│   ├── carbon-data-processor.js
+│   ├── congestion.js
+│   ├── consensus_validation_results.json     (unrelated project — consensus benchmark)
+│   ├── crosschainintergration.ts
+│   ├── DATA_INTEGRITY_MEMO.md                ← our load-shifting fix memo
+│   ├── diagnosis.js                          (terminal capture only)
+│   ├── energy_amm_minimal.js
+│   ├── experiment_state.json                 (unrelated project — carbon-credit experiment)
+│   ├── fullgridtest.js                       (real on-chain grid validation script)
+│   ├── generate_scenarios_V2.js              ← our fixed load-shifting generator (terminal capture only)
+│   ├── generate_synthetic_scenarios.js       (terminal capture only — original, unfixed)
+│   ├── gridstability2.js
+│   ├── gridstabilitytest.js
+│   ├── gridtest2.js
+│   ├── ieeevalidationfinal.js
+│   ├── ieee_validation_results.json          (both logged live runs errored, transactions: [])
+│   ├── ieee_validation_results_final.json
+│   ├── layer1_experiment_state.json
+│   ├── modelcontextcompare.js
+│   ├── n2n-charts-generator.js
+│   ├── n2nrislivetestsuite.js
+│   ├── oracle.js                             (terminal capture only)
+│   ├── paper_validation.js
+│   ├── paper_validation_summary.json         (terminal capture only)
+│   ├── passchaintest.js
+│   ├── passchaintest2.js
+│   ├── passchaintest_V2.js
+│   ├── passchain_flow_test.js
+│   ├── passchain_story_test.js
+│   ├── results_latex_table.tex               (terminal capture only)
+│   ├── run-climate-regulation-experiment.js
+│   ├── run_paired_scenarios.js               ← our load-shifting driver (terminal capture only)
+│   ├── servicenodes.js
+│   ├── setup_liquidity.js                    ← may be reusable for addLiquidity step
+│   ├── streambasedconsensus.js
+│   ├── streamcharge.js
+│   ├── streamscript.js
+│   ├── strebacom-simulation.js
+│   ├── strebacom_experiment_state.json
+│   ├── synthetic_transactions_520.json       (terminal capture only — original dataset)
+│   ├── table4_replacement.csv/.json/.tex     (terminal capture only)
+│   ├── timeweight.js
+│   ├── transactions_520.csv                  (terminal capture only)
+│   ├── UISTest.js
+│   ├── uncertainty.js
+│   ├── vehicle.js, vehicle2.js                (terminal capture only)
+│   │
+│   └── results_v2/                           (terminal capture only — our fix output)
+│       ├── baseline_run_illustrative.json
+│       ├── New Text Document.txt              (empty)
+│       ├── table4_replacement.csv/.json/.tex
+│       ├── tableoutputfromconsole.txt
+│       └── treatment_run_illustrative.json
+│
+├── utils/
+│   ├── contract-loader.ts
+│   └── logger.ts
+│
+├── .eslintrc.json
+├── deployment-script.js
+├── global.d.ts
+├── next-env.d.ts
+├── next.config.js
+├── package-config.json
+├── package-lock.json
+├── package.json
+├── project-setup 2
+├── sample_data.csv
+├── sample_nodes.csv
+├── sample_attacks.csv
+├── truffle-config.js
+├── tsconfig.json
+└── yarn.lock
