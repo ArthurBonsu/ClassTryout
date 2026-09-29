@@ -1,0 +1,329 @@
+.page {
+  min-height: 100vh;
+  background: #f4f5f7;
+  padding: 32px 24px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #1a1d23;
+}
+
+.walletBar {
+  max-width: 1000px;
+  margin: 0 auto 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  background: #fff;
+  border: 1px solid #e3e5e9;
+  border-radius: 12px;
+  padding: 16px 20px;
+}
+
+.walletInfo {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.pill {
+  background: #eef1f6;
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 13px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  color: #40495c;
+}
+
+.grid {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+@media (max-width: 760px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #e3e5e9;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.card h2 {
+  margin: 0 0 16px;
+  font-size: 18px;
+}
+
+.section {
+  margin-bottom: 22px;
+}
+
+.section:last-child {
+  margin-bottom: 0;
+}
+
+.label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #55606f;
+  margin-bottom: 8px;
+}
+
+.inputRow {
+  display: flex;
+  gap: 8px;
+}
+
+.stackedInputs {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input {
+  flex: 1;
+  border: 1px solid #d7dbe2;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 14px;
+  outline: none;
+}
+
+.input:focus {
+  border-color: #3b6fe0;
+}
+
+.button {
+  background: #3b6fe0;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.buttonSecondary {
+  background: #eef1f6;
+  color: #2a3342;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.buttonAdmin {
+  background: #fff;
+  color: #b4530a;
+  border: 1px solid #f0c48a;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.subtle {
+  color: #7c8494;
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+.errorText {
+  color: #c0341d;
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+.successText {
+  color: #1c7c4d;
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+.resultBox {
+  margin-top: 12px;
+  background: #f7f8fa;
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.resultLabel {
+  color: #7c8494;
+  font-weight: 600;
+}
+
+.badgeActive {
+  background: #e4f6ec;
+  color: #1c7c4d;
+  border-radius: 999px;
+  padding: 2px 10px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.badgeRevoked {
+  background: #fdeae6;
+  color: #c0341d;
+  border-radius: 999px;
+  padding: 2px 10px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.adminSection {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px dashed #e3e5e9;
+}
+
+.adminLabel {
+  font-size: 13px;
+  font-weight: 700;
+  color: #b4530a;
+  margin-bottom: 4px;
+}
+
+/* --- Receipts --- */
+
+.receipt {
+  margin-top: 12px;
+  background: #fbfdf9;
+  border: 1px solid #cfe6d1;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.receiptHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #e4f6ec;
+  padding: 8px 14px;
+}
+
+.receiptAction {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1c7c4d;
+}
+
+.receiptSubject {
+  font-size: 13px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  color: #2a3342;
+}
+
+.receiptBody {
+  padding: 10px 14px;
+  font-size: 12px;
+}
+
+.receiptRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 3px 0;
+  border-bottom: 1px dashed #e9ede8;
+}
+
+.receiptRow:last-child {
+  border-bottom: none;
+}
+
+.receiptLabel {
+  color: #8a9186;
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.receiptTx {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  word-break: break-all;
+  text-align: right;
+}
+
+/* --- History timeline --- */
+
+.timeline {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+}
+
+.timelineEntry {
+  display: flex;
+  gap: 12px;
+  padding-bottom: 16px;
+  position: relative;
+}
+
+.timelineEntry:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 14px;
+  bottom: 0;
+  width: 1px;
+  background: #e3e5e9;
+}
+
+.timelineDot {
+  flex-shrink: 0;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #3b6fe0;
+  margin-top: 5px;
+}
+
+.timelineContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.timelineType {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.timelineDetail {
+  font-size: 12px;
+  color: #40495c;
+  margin-top: 2px;
+}
+
+.timelineTx {
+  display: block;
+  margin-top: 6px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  color: #9aa1ae;
+  word-break: break-all;
+}

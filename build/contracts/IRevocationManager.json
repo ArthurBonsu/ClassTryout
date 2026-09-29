@@ -1,0 +1,180 @@
+{
+  "contractName": "IRevocationManager",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_pseudonym",
+          "type": "string"
+        }
+      ],
+      "name": "isRevoked",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_pseudonym\",\"type\":\"string\"}],\"name\":\"isRevoked\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/IRevocationManager.sol\":\"IRevocationManager\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/IRevocationManager.sol\":{\"keccak256\":\"0x87a66c82cd1c8a8645e7f783fa3014a1543b234c15752aeba4d9a7fae4ba9412\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://269ed7c259357ee4e7104a01dd609b5699e794f5ee14f5c51b5b4ec2adf06095\",\"dweb:/ipfs/QmazpsYmzj1vGpypbqjfcjAMzfF2w9DKYUmTnBfLJou8tz\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.0;\r\n\r\n// Minimal interface LicenseRegistry needs from RevocationManager — just\r\n// enough to check whether a vehicle is currently revoked, without the two\r\n// contracts needing to know anything else about each other.\r\ninterface IRevocationManager {\r\n    function isRevoked(string memory _pseudonym) external view returns (bool);\r\n}\r\n",
+  "sourcePath": "C:\\Users\\admin\\Documents\\classtryout\\classtryout\\contracts\\IRevocationManager.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/IRevocationManager.sol",
+    "exportedSymbols": {
+      "IRevocationManager": [
+        421
+      ]
+    },
+    "id": 422,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 413,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:23:2"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IRevocationManager",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 421,
+        "linearizedBaseContracts": [
+          421
+        ],
+        "name": "IRevocationManager",
+        "nameLocation": "284:18:2",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "functionSelector": "35168a00",
+            "id": 420,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isRevoked",
+            "nameLocation": "319:9:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 416,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 415,
+                  "mutability": "mutable",
+                  "name": "_pseudonym",
+                  "nameLocation": "343:10:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 420,
+                  "src": "329:24:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 414,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "329:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "328:26:2"
+            },
+            "returnParameters": {
+              "id": 419,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 418,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 420,
+                  "src": "378:4:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 417,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "378:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "377:6:2"
+            },
+            "scope": 421,
+            "src": "310:74:2",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 422,
+        "src": "274:113:2",
+        "usedErrors": [],
+        "usedEvents": []
+      }
+    ],
+    "src": "33:356:2"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.20+commit.a1b79de6.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.16",
+  "updatedAt": "2026-09-29T16:39:38.933Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

@@ -1,0 +1,459 @@
+{
+  "contractName": "IVehicleRegistry",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_pseudonym",
+          "type": "string"
+        }
+      ],
+      "name": "isVehicleRegistered",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_pseudonym",
+          "type": "string"
+        }
+      ],
+      "name": "getVehicle",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "registrationTime",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "isRegistered",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_owner",
+          "type": "address"
+        }
+      ],
+      "name": "getPseudonymByOwner",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"}],\"name\":\"getPseudonymByOwner\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_pseudonym\",\"type\":\"string\"}],\"name\":\"getVehicle\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"registrationTime\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"isRegistered\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_pseudonym\",\"type\":\"string\"}],\"name\":\"isVehicleRegistered\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"Unchanged from the original \\u2014 already matches VehicleRegistry.sol exactly      and every downstream contract already depends on these three signatures.\",\"kind\":\"dev\",\"methods\":{},\"title\":\"IVehicleRegistry\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"Read-only interface other contracts (RevocationManager, LicenseRegistry)         use to check driver/vehicle identity status without depending on         VehicleRegistry's full implementation.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/IVehicleRegistry.sol\":\"IVehicleRegistry\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/IVehicleRegistry.sol\":{\"keccak256\":\"0xabd8c4745c7f1fd3ba7a28233bb3f38f117524f02a19f14b7814a988a7eb21f0\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://e3e5d58d7ec3ec3fb1d37a70a0a660c5e307af978df7882e1430a59b06df4929\",\"dweb:/ipfs/QmQQMEYvbXkt6uR2dCLi1Rgy7w8rxc4F3sGgVQA93h3Emz\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\n/// @title IVehicleRegistry\n/// @notice Read-only interface other contracts (RevocationManager, LicenseRegistry)\n///         use to check driver/vehicle identity status without depending on\n///         VehicleRegistry's full implementation.\n/// @dev Unchanged from the original — already matches VehicleRegistry.sol exactly\n///      and every downstream contract already depends on these three signatures.\ninterface IVehicleRegistry {\n    function isVehicleRegistered(string memory _pseudonym) external view returns (bool);\n    function getVehicle(string memory _pseudonym) external view returns (address owner, uint256 registrationTime, bool isRegistered);\n    function getPseudonymByOwner(address _owner) external view returns (string memory);\n}\n",
+  "sourcePath": "C:\\Users\\admin\\Documents\\classtryout\\classtryout\\contracts\\IVehicleRegistry.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/IVehicleRegistry.sol",
+    "exportedSymbols": {
+      "IVehicleRegistry": [
+        450
+      ]
+    },
+    "id": 451,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 423,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:23:3"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IVehicleRegistry",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 424,
+          "nodeType": "StructuredDocumentation",
+          "src": "57:408:3",
+          "text": "@title IVehicleRegistry\n @notice Read-only interface other contracts (RevocationManager, LicenseRegistry)\n         use to check driver/vehicle identity status without depending on\n         VehicleRegistry's full implementation.\n @dev Unchanged from the original — already matches VehicleRegistry.sol exactly\n      and every downstream contract already depends on these three signatures."
+        },
+        "fullyImplemented": false,
+        "id": 450,
+        "linearizedBaseContracts": [
+          450
+        ],
+        "name": "IVehicleRegistry",
+        "nameLocation": "475:16:3",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "functionSelector": "69f943da",
+            "id": 431,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isVehicleRegistered",
+            "nameLocation": "507:19:3",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 427,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 426,
+                  "mutability": "mutable",
+                  "name": "_pseudonym",
+                  "nameLocation": "541:10:3",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 431,
+                  "src": "527:24:3",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 425,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "527:6:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "526:26:3"
+            },
+            "returnParameters": {
+              "id": 430,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 429,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 431,
+                  "src": "576:4:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 428,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "576:4:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "575:6:3"
+            },
+            "scope": 450,
+            "src": "498:84:3",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "047fd579",
+            "id": 442,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getVehicle",
+            "nameLocation": "596:10:3",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 434,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 433,
+                  "mutability": "mutable",
+                  "name": "_pseudonym",
+                  "nameLocation": "621:10:3",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 442,
+                  "src": "607:24:3",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 432,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "607:6:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "606:26:3"
+            },
+            "returnParameters": {
+              "id": 441,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 436,
+                  "mutability": "mutable",
+                  "name": "owner",
+                  "nameLocation": "664:5:3",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 442,
+                  "src": "656:13:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 435,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "656:7:3",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 438,
+                  "mutability": "mutable",
+                  "name": "registrationTime",
+                  "nameLocation": "679:16:3",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 442,
+                  "src": "671:24:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 437,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "671:7:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 440,
+                  "mutability": "mutable",
+                  "name": "isRegistered",
+                  "nameLocation": "702:12:3",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 442,
+                  "src": "697:17:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 439,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "697:4:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "655:60:3"
+            },
+            "scope": 450,
+            "src": "587:129:3",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "f728dd08",
+            "id": 449,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getPseudonymByOwner",
+            "nameLocation": "730:19:3",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 445,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 444,
+                  "mutability": "mutable",
+                  "name": "_owner",
+                  "nameLocation": "758:6:3",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 449,
+                  "src": "750:14:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 443,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "750:7:3",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "749:16:3"
+            },
+            "returnParameters": {
+              "id": 448,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 447,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 449,
+                  "src": "789:13:3",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 446,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "789:6:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "788:15:3"
+            },
+            "scope": 450,
+            "src": "721:83:3",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 451,
+        "src": "465:341:3",
+        "usedErrors": [],
+        "usedEvents": []
+      }
+    ],
+    "src": "32:775:3"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.20+commit.a1b79de6.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.16",
+  "updatedAt": "2026-09-29T16:39:38.934Z",
+  "devdoc": {
+    "details": "Unchanged from the original — already matches VehicleRegistry.sol exactly      and every downstream contract already depends on these three signatures.",
+    "kind": "dev",
+    "methods": {},
+    "title": "IVehicleRegistry",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "notice": "Read-only interface other contracts (RevocationManager, LicenseRegistry)         use to check driver/vehicle identity status without depending on         VehicleRegistry's full implementation.",
+    "version": 1
+  }
+}
