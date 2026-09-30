@@ -61,7 +61,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -80,7 +81,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -93,7 +95,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -127,7 +130,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -172,7 +176,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -201,7 +206,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -220,7 +226,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -12005,9 +12012,17 @@
     "name": "solc",
     "version": "0.8.20+commit.a1b79de6.Emscripten.clang"
   },
-  "networks": {},
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x51e93A18a1FD097958Cd94665fdc246BddB3d808",
+      "transactionHash": "0x29b6cb76ab5d2d682d774eb861352f1da8f0aaea9154b4559154194162bd5e56"
+    }
+  },
   "schemaVersion": "3.4.16",
-  "updatedAt": "2026-09-29T16:39:38.961Z",
+  "updatedAt": "2026-09-29T22:28:26.987Z",
+  "networkType": "ethereum",
   "devdoc": {
     "details": "All existing function names, event names, and return-value names are kept      exactly as they were so RevocationManager.sol, LicenseRegistry.sol, and the      existing frontend (utils/contracts.ts, utils/receipts.ts, components/*)      continue to work without any changes on their side.",
     "kind": "dev",

@@ -115,7 +115,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -128,7 +129,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -182,7 +184,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -195,7 +198,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -208,7 +212,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -227,7 +232,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -274,7 +280,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -323,7 +330,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -342,7 +350,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -15133,9 +15142,17 @@
     "name": "solc",
     "version": "0.8.20+commit.a1b79de6.Emscripten.clang"
   },
-  "networks": {},
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0xBb4400a9dec5B859A7d8fEb24817710bC6DBdA8C",
+      "transactionHash": "0x7af2eaa804da61debb9deb4a675e2666e425bf85917ab4032edeeb851b0cb856"
+    }
+  },
   "schemaVersion": "3.4.16",
-  "updatedAt": "2026-09-29T16:39:38.936Z",
+  "updatedAt": "2026-09-29T22:28:27.011Z",
+  "networkType": "ethereum",
   "devdoc": {
     "details": "Issues and tracks licenses tied to vehicles already registered in VehicleRegistry. Every write here (issue / revoke / reinstate) emits an event — that event, plus the transaction hash and block info the wallet returns immediately after confirmation, IS the receipt. Nothing is written to any off-chain database; a license's current state is always read straight from this contract's own storage via the view functions below, and its full history is read straight from these events via queryFilter on the frontend. See utils/receipts.ts in the demo app.",
     "kind": "dev",

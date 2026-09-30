@@ -127,7 +127,7 @@ contract RevocationManager {
     function getRevocationDetails(string memory _pseudonym) external view returns (
         uint256 revocationTime,
         string memory reason,
-        bool isRevoked
+        bool revoked
     ) {
         RevokedVehicle memory rv = identityRevocationList[_pseudonym];
         return (rv.revocationTime, rv.reason, rv.isRevoked);

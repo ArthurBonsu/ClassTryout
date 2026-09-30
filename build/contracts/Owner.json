@@ -49,7 +49,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     }
   ],
   "metadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"oldOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnerSet\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"changeOwner\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getOwner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"Set & change owner\",\"kind\":\"dev\",\"methods\":{\"changeOwner(address)\":{\"details\":\"Change owner\",\"params\":{\"newOwner\":\"address of new owner\"}},\"constructor\":{\"details\":\"Set contract deployer as owner\"},\"getOwner()\":{\"details\":\"Return owner address \",\"returns\":{\"_0\":\"address of owner\"}}},\"title\":\"Owner\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/2_Owner.sol\":\"Owner\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/2_Owner.sol\":{\"keccak256\":\"0xcc0f56a97cf2ee8d1bd7dd00b445414ed4e42c05120d2cab1336c534778c2ab5\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://498cf460e71a1b27a073aca985afb7b241d383c3cca79d752401c3cb9694d2b5\",\"dweb:/ipfs/QmRkSRoCe9Did8VAgyUFpjfS7yYbxvGV33adXkscp2S8Kr\"]}},\"version\":1}",
@@ -1904,12 +1905,13 @@
         }
       },
       "links": {},
-      "address": "0x2D99Fb657bE63D6b620359E21BA94ed47C2aF5f9",
-      "transactionHash": "0x9429a183b65873be40839b0c6717ac1013dfa38cffba8f4e0547f6c1b5e78a97"
+      "address": "0xf348f4239bd5E13E9E136143B12e9ddac80c2Af5",
+      "transactionHash": "0x894bf1ed55fe0be7739532d1deaf74f5801c3eb8b4f9091941202883156cd52c"
     }
   },
   "schemaVersion": "3.4.16",
-  "updatedAt": "2026-09-29T16:39:38.925Z",
+  "updatedAt": "2026-09-29T22:28:24.432Z",
+  "networkType": "ethereum",
   "devdoc": {
     "details": "Set & change owner",
     "kind": "dev",

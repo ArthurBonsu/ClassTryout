@@ -38,6 +38,41 @@ export default function WalletBar({ onConnected }: WalletBarProps) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // Keep this in sync with MetaMask itself, instead of only reading the
+  // chain/account once at connect time. Without this, switching networks or
+  // accounts inside MetaMask after connecting leaves the pill showing
+  // whatever was true at the moment you clicked "Connect Wallet" — exactly
+  // the "still shows Mainnet after I switched to Sepolia" symptom.
+  useEffect(() => {
+    if (typeof window === "undefined" || !window.ethereum) return;
+
+    const handleChainChanged = () => {
+      // Contract addresses and any state already fetched elsewhere on the
+      // page are tied to the chain we connected on. Reloading is the
+      // simplest way to make sure everything re-reads the new chain
+      // cleanly, and it's the pattern MetaMask itself recommends.
+      window.location.reload();
+    };
+
+    const handleAccountsChanged = (accounts: string[]) => {
+      if (accounts.length === 0) {
+        // Wallet locked or disconnected from this site.
+        setAccount(null);
+        setChainId("");
+      } else {
+        setAccount(accounts[0]);
+      }
+    };
+
+    window.ethereum.on?.("chainChanged", handleChainChanged);
+    window.ethereum.on?.("accountsChanged", handleAccountsChanged);
+
+    return () => {
+      window.ethereum?.removeListener?.("chainChanged", handleChainChanged);
+      window.ethereum?.removeListener?.("accountsChanged", handleAccountsChanged);
+    };
+  }, []);
+
   const chainLabel = chainId ? `${CHAIN_NAMES[chainId] ?? "chain"} (${chainId})` : "";
 
   return (

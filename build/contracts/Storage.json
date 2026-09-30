@@ -25,7 +25,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     }
   ],
   "metadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"retrieve\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"num\",\"type\":\"uint256\"}],\"name\":\"store\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"custom:dev-run-script\":\"./scripts/deploy_with_ethers.ts\",\"details\":\"Store & retrieve value in a variable\",\"kind\":\"dev\",\"methods\":{\"retrieve()\":{\"details\":\"Return value \",\"returns\":{\"_0\":\"value of 'number'\"}},\"store(uint256)\":{\"details\":\"Store value in variable\",\"params\":{\"num\":\"value to store\"}}},\"title\":\"Storage\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/Storage.sol\":\"Storage\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/Storage.sol\":{\"keccak256\":\"0xa3de51030e5784d1fc25677298a0bd61bf7eac541ca2fc94232f1b7dc5a89e21\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://aac95d61b7ce356e2da8d93eb66abfabbeadebb4f44d3d78fd14414e7ac918ba\",\"dweb:/ipfs/QmZ6otiNvDfrWzEiQJBAdWUurwEvsemrbBZgD9hj6qSki1\"]}},\"version\":1}",
@@ -573,12 +574,13 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0xF9392d084dcb1D85cDcce43D79586C1926DDD056",
-      "transactionHash": "0xf1bfc8f65a0b445a383b705292cb66af596449431d8f1242b340cc2680f1f399"
+      "address": "0x282d9D066302D91bCcD74e989Da7FA4716a1eb22",
+      "transactionHash": "0xf16377ff5e08071b659ad02057e1045e831a34a8f6db27608418767d7bc421bf"
     }
   },
   "schemaVersion": "3.4.16",
-  "updatedAt": "2026-09-29T16:39:38.960Z",
+  "updatedAt": "2026-09-29T22:28:24.450Z",
+  "networkType": "ethereum",
   "devdoc": {
     "custom:dev-run-script": "./scripts/deploy_with_ethers.ts",
     "details": "Store & retrieve value in a variable",
